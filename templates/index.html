@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="icon" href="https://imgs.search.brave.com/yhP1JG6ih_lhCDuOg4b-vllsdIDPMLZc5SJS7ChpgSQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbmdm/cmUuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9oZWFydC0zMi0y/LnBuZw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Spending Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #111;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(255,255,255,0.3);
+        }
+        h1 {
+            color: #fff;
+        }
+        label {
+            color: #fff;
+            margin-right: 10px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gift Spending Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="year">Enter the year:</label>
+            <input type="number" id="year" name="year" required>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

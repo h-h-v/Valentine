@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="icon" href="https://imgs.search.brave.com/yhP1JG6ih_lhCDuOg4b-vllsdIDPMLZc5SJS7ChpgSQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbmdm/cmUuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9oZWFydC0zMi0y/LnBuZw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Spending Prediction Result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="background-color: black; color: white; font-family: Arial, sans-serif;">
+    <h1>Gift Spending Prediction Result</h1>
+    <p>Predicted Spending for Year {{ year }}:</p>
+    <canvas id="pieChart"></canvas>
+
+    <script>
+        var predictedSpendingData = {{ predicted_spending | safe }};
+
+        var labels = Object.keys(predictedSpendingData);
+        var data = Object.values(predictedSpendingData);
+
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+</body>
+</html>
